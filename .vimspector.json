@@ -1,0 +1,42 @@
+{
+  "adapters": {
+    "node": {
+      "command": [
+        "node",
+        "${workspaceRoot}/node_modules/vimspector/gadgets/linux/download/vscode-node-debug2/out/src/nodeDebug.js"
+      ],
+      "name": "Node",
+      "port": 8123,
+      "configuration": {
+        "request": "launch",
+        "protocol": "auto",
+        "stopOnEntry": false,
+        "console": "integratedTerminal",
+        "cwd": "${workspaceRoot}"
+      }
+    }
+  },
+  "configurations": {
+    "Launch Node.js": {
+      "adapter": "node",
+      "file": "${workspaceRoot}/index.js",
+      "args": []
+    },
+    "Launch React": {
+      "adapter": "node",
+      "file": "${workspaceRoot}/node_modules/.bin/react-scripts",
+      "args": [
+        "run"
+      ],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "breakpoints": {
+        "exception": {
+          "all": "N",
+          "uncaught": "N"
+        }
+      }
+    }
+  }
+}
