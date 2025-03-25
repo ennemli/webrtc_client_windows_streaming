@@ -59,8 +59,9 @@ function ConnectionStatusToStr(cs: ConnectionStatus): string {
 
 const peerConfig = {
   iceServers: [
-    { urls: 'stun:stun.l.google.com:19302' },
-    { urls: 'stun:stun1.l.google.com:19302' },
+    /*    { urls: 'stun:stun.l.google.com:19302' },
+        { urls: 'stun:stun1.l.google.com:19302' },
+      */
   ],
 };
 
@@ -111,6 +112,8 @@ const App = () => {
   const addRemoteVideo = (stream: MediaStream) => {
     if (videoRef.current) {
       videoRef.current.srcObject = stream;
+
+      videoRef.current.volume = 1.0;
     }
   };
 
@@ -400,7 +403,7 @@ const App = () => {
           ref={videoRef}
           autoPlay={true}
           playsInline={true}
-          muted
+          controls={true}
           className="remote-video"
         />
       </div>
